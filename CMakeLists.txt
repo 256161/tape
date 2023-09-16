@@ -8,7 +8,7 @@ project(tape VERSION ${PROJECT_VESRION})
 
 #find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
-add_executable(tape main.cpp)
+add_executable(tape main.cpp tape.cpp tapesort.cpp)
 
 #add_executable(boost_test boost_test.cpp)
 
