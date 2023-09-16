@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
 
-set(PATCH_VERSION "9")
-set(PROJECT_VESRION 0.0.9)
+set(PATCH_VERSION "4")
+set(PROJECT_VESRION 0.0.4)
 
 project(tape VERSION ${PROJECT_VESRION})
 
