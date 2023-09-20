@@ -41,11 +41,11 @@ public:
   template <typename T> T readFull() {
     T elements;
     std::ifstream inputTapeNameFile(fileName);
+
     if (inputTapeNameFile.is_open()) {
 
-      while (!inputTapeNameFile.eof()) {
-        int number;
-        inputTapeNameFile >> number;
+      int number;
+      while (inputTapeNameFile >> number) {
         elements.push_back(number);
       }
       inputTapeNameFile.close();
@@ -70,6 +70,6 @@ public:
   void moveToRight();
   void deleteFirstElement();
   std::string fileName;
-  
+
   // Хранить позицию головки
 };

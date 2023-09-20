@@ -8,7 +8,7 @@ int Tape::readFirst() {
   std::ifstream inputTapeNameFile(fileName);
   if (inputTapeNameFile.is_open()) {
 
-    while (!inputTapeNameFile.eof()) {
+    if (!inputTapeNameFile.eof()) {
       inputTapeNameFile >> element;
     }
     inputTapeNameFile.close();
@@ -20,13 +20,20 @@ int Tape::readFirst() {
 }
 
 void Tape::deleteFirstElement() {
+
   std::list<int> fullElement = readFull<std::list<int>>();
   fullElement.erase(fullElement.begin());
   write<std::list<int>>(fullElement);
 };
 
 void Tape::writeNextElement(int element) {
+
   std::ofstream outputFile(fileName, std::ios::app);
-  outputFile << element;
-  outputFile.close();
+  if (outputFile.is_open()) {
+    outputFile << element;
+    outputFile << " ";
+    outputFile.close();
+  } else {
+    std::cout << " Файл для записи следующего элемента не открылся";
+  }
 }
