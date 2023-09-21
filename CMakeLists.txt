@@ -1,14 +1,22 @@
 cmake_minimum_required(VERSION 3.10)
 
 
-set(PATCH_VERSION "5")
-set(PROJECT_VESRION 0.0.5)
+set(PATCH_VERSION "7")
+set(PROJECT_VESRION 0.0.7)
 
 project(tape VERSION ${PROJECT_VESRION})
 
+include(FetchContent)
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.2/json.tar.xz)
+FetchContent_MakeAvailable(json)
+
 #find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
-add_executable(tape main.cpp tape.cpp tapesort.cpp)
+add_executable(tape main.cpp tape.cpp tapesort.cpp config.cpp)
+configure_file(config.json config.json) 
+
+target_link_libraries(tape PRIVATE nlohmann_json::nlohmann_json)
+
 
 #add_executable(boost_test boost_test.cpp)
 
@@ -23,7 +31,6 @@ SET (main.cpp tape.cpp PROPERTIES
 #)
 
 install(TARGETS tape RUNTIME DESTINATION bin)
-
 set(CPACK_GENERATOR DEB)
 
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")

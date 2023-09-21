@@ -1,9 +1,9 @@
+#include "config.cpp"
 #include "tapesort.h"
 #include <fstream>
 #include <iostream>
-#include <string>
-
 #include <list>
+#include <string>
 // Файл конфигурации хранит информацию
 /* задержки по записи/чтению элемента с ленты, перемотки
 ленты, и сдвига ленты на одну позицию.*/
@@ -15,6 +15,8 @@ int main(int argc, char const *argv[]) {
  }*/
 
   // TapeSort ts(argv[1], argv[2]);
+
+  ConfigTest::readConfig();
 
   Tape *inTape = new Tape("/tmp/tempTape/inputTape.txt");
 
