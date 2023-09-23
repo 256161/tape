@@ -28,7 +28,7 @@
 <br> - Желательно написать юнит-тесты.</br>
 <h1>СБОРКА и ЗАПУСК</h1>
 <br>Установка скаченного из релиза пакета:
-<br>sudo apt install -y tape-0.0.8-Linux.deb</br>
+<br>sudo apt install -y tape-0.0.11-Linux.deb</br>
 <br>Сборка проекта утилитой cmake :
 <br>mkdir build cd build
 <br>cmake -B ./build
