@@ -1,6 +1,5 @@
 #include "tape.h"
 #include "tapesort.h"
-
 #include <list>
 
 int Tape::readFirst() {

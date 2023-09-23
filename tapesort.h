@@ -8,10 +8,10 @@ public:
   ~TapeSort() { delete tapeInput_; }
   void readElemntForTempFile();
   void sortElement();
-  const std::string fileNameTemp{"/tmp/tempTape/tempTape"};
+  const std::string fileNameTemp{"/tmp/tempTape"};
 
 private:
-  Tape *tapeInput_; 
+  Tape *tapeInput_;
   Tape *tapeOutput_;
 
   std::string outFileName_;
